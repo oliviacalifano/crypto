@@ -60,7 +60,7 @@ app.post('/', function (req, res) {
         res.render('index', {user: user_name, table: null, error: 'Error, please try again'});
       } 
 	  else {
-		 if(user_name == "Olivia"){
+		 if(user_name == "Olivia" || user_name == "olivia"){
 			let weatherText = `Bitcoin's last trade price was ${btc.price}!`;
 			res.render('index', {
 				user: user_name, 
