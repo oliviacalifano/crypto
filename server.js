@@ -89,6 +89,10 @@ app.post('/', function (req, res) {
   });
 })
 
+app.listen(port, function() {
+	console.log('Our app is running on http://localhost:' + port);
+});
+
 //app.listen(3000, function () {
 //  console.log('Example app listening on port 3000!')
 //})
