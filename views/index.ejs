@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="user" type="text" class="ghost-input" placeholder="<%= user %>" required>
+          <input type="submit" class="ghost-button" value="Calculate Profits/Losses">
+        </form>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+		
+		<% if(table !== null){ %>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Ticker Price</th>
+              <th>+/-</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BTC</td>
+              <td><%= btc_price %></td>
+              <td><%= btc_diff %></td>
+            </tr>
+            <tr>
+              <td>ETH</td>
+              <td><%= eth_price %></td>
+              <td><%= eth_diff %></td>
+            </tr>
+            <tr>
+              <td>LTC</td>
+              <td><%= ltc_price %></td>
+              <td><%= ltc_diff %></td>
+            </tr>
+			</tbody>
+			</table>
+			
+			
+			<table>
+			<td><p>Total = <%= total %></p></td>
+			</table>
+
+
+        <% } %>
+		  
+      </fieldset>
+    </div>
+  </body>
+</html>
