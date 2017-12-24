@@ -6,7 +6,7 @@ const app = express()
 
 const apiKey = '*****************';
 
-
+var port = process.env.PORT || 8080;
 
 Olivia = {
 		"b": [14371.61,0.0343],
@@ -89,6 +89,6 @@ app.post('/', function (req, res) {
   });
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+//app.listen(3000, function () {
+//  console.log('Example app listening on port 3000!')
+//})
