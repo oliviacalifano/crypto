@@ -79,7 +79,7 @@ app.post('/', function (req, res) {
 				//eth_diff: Math.round((eth.price-Olivia["e1"][0])*Olivia["e1"][1]+(eth.price-Olivia["e2"][0])*Olivia["e2"][1])*100/100, 
 				eth_diff: Math.round(eth.price*Olivia2["e"][0]-Olivia2["e"][1]),
 				//ltc_diff: Math.round((ltc.price-Olivia["l"][0])*Olivia["l"][1])*100/100,
-				ltc_diff: Math.round(eth.price*Olivia2["l"][0]-Olivia2["l"][1]),
+				ltc_diff: Math.round(ltc.price*Olivia2["l"][0]-Olivia2["l"][1]),
 				//total: Math.round((btc.price-Olivia["b"][0])*Olivia["b"][1] + (eth.price-Olivia["e1"][0])*Olivia["e1"][1] + (eth.price-Olivia["e2"][0])*Olivia["e2"][1] + (ltc.price-Olivia["l"][0])*Olivia["l"][1])*100/100,
 				total: Math.round((eth.price*Olivia2["e"][0]-Olivia2["e"][1])+(eth.price*Olivia2["l"][0]-Olivia2["l"][1])),
 				table: "A", error: null
