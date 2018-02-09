@@ -15,6 +15,12 @@ Olivia = {
 		"e2" : [1214.64,0.4548003],
 		"l": [129.04,1.1392]
 		}
+	
+Olivia2 = {
+		"b": [0,0],
+		"e": [1.5119556,1060.65],
+		"l": [1.1392,150]
+		}	
 console.log(Olivia["b"][0])
 
 
@@ -70,9 +76,12 @@ app.post('/', function (req, res) {
 				eth_price: Math.round(eth.price * 100) / 100, 
 				ltc_price: Math.round(ltc.price * 100) / 100, 
 				btc_diff: Math.round((btc.price-Olivia["b"][0])*Olivia["b"][1])*100/100, 
-				eth_diff: Math.round((eth.price-Olivia["e1"][0])*Olivia["e1"][1]+(eth.price-Olivia["e2"][0])*Olivia["e2"][1])*100/100, 
-				ltc_diff: Math.round((ltc.price-Olivia["l"][0])*Olivia["l"][1])*100/100,
-				total: Math.round((btc.price-Olivia["b"][0])*Olivia["b"][1] + (eth.price-Olivia["e1"][0])*Olivia["e1"][1] + (eth.price-Olivia["e2"][0])*Olivia["e2"][1] + (ltc.price-Olivia["l"][0])*Olivia["l"][1])*100/100,
+				//eth_diff: Math.round((eth.price-Olivia["e1"][0])*Olivia["e1"][1]+(eth.price-Olivia["e2"][0])*Olivia["e2"][1])*100/100, 
+				eth_diff: Math.round(eth.price*Olivia2["e"][0]-Olivia2["e"][1]),
+				//ltc_diff: Math.round((ltc.price-Olivia["l"][0])*Olivia["l"][1])*100/100,
+				ltc_diff: Math.round(eth.price*Olivia2["l"][0]-Olivia2["l"][1]),
+				//total: Math.round((btc.price-Olivia["b"][0])*Olivia["b"][1] + (eth.price-Olivia["e1"][0])*Olivia["e1"][1] + (eth.price-Olivia["e2"][0])*Olivia["e2"][1] + (ltc.price-Olivia["l"][0])*Olivia["l"][1])*100/100,
+				total: Math.round((eth.price*Olivia2["e"][0]-Olivia2["e"][1])+(eth.price*Olivia2["l"][0]-Olivia2["l"][1]))
 				table: "A", error: null
 				});
 			}
